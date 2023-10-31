@@ -1,3 +1,4 @@
->>> result=(16823*12302)%3092
->>> print(result)
-2802
+#-- coding: utf-8 --
+result=(16823*12302)%3092
+print(result)
+

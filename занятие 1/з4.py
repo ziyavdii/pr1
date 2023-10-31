@@ -1,7 +1,8 @@
+#-- coding: utf-8 --
 seconds = int(input('Введите количество секунд'))
-Введите количество секунд54324321
-minutes = seconds//60
-hours = minutes//60
-days = hours//24
-print('days,hours,minutes,seconds')
-days,hours,minutes,seconds
+days=seconds//86400
+hours=(seconds%86400)//3600
+minutes=(seconds%3600)//60
+seconds=seconds%60
+print(f'{days}{hours}{minutes}{seconds}')
+
