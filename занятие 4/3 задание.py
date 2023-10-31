@@ -1,8 +1,10 @@
+#-- coding: utf-8 --
+def num(a,b):
+    for num in range(a,b-1,-1):
+        if num % 2 != 0:
+            print(num)
 a=int(input())
 b=int(input())
-while a>b:
-    if a%2 !=0:
-        print(a)
-    a-=1
-    if b%2 !=0:
-        print(b)
+r=num(a,b)
+print(r)
+

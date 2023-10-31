@@ -1,13 +1,12 @@
-n=int(input('Введите число Фибоначчи:'))
-if n<=2:
-    print(n)
-    exit(0)
-a=1
-b=1
-s=2
-for i in range(n-2):
-    c = a+b
-    a=b
-    b=c
-    s += c
-    print('Ответ:',s)
+# -- coding: utf-8 --
+def code(n):
+    a=0
+    b=1
+    c=0
+    for i in range(n):
+        a,b=b+a,b
+        c += a
+    return c
+n=int(input())
+r=code(n)
+print(r)
