@@ -1,3 +1,5 @@
+package two.zadanie;
+
 public class MAin2 {
     public static void main(String[] args) {
         Matrix matrixOp = new Matrix(3);

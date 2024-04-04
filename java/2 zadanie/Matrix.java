@@ -1,3 +1,5 @@
+package two.zadanie;
+
 import java.util.Random;
 
 public class Matrix {
