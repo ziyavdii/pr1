@@ -1,5 +1,16 @@
 public class CalculatorModel {
     public double calculate(String expression) {
+        expression = expression.trim().replaceAll("\\s+", "");
+
+        if (!expression.matches("^[\\d.].*[\\d.]$")) {
+            throw new IllegalArgumentException("Выражение должно начинаться и заканчиваться числом.");
+        }
+
+        int numberCount = expression.split("(?<=[0-9.])(?=[^0-9.])|(?<=[^0-9.])(?=[0-9.])").length;
+        if (numberCount > 100) {
+            throw new IllegalArgumentException("Превышено максимальное количество элементов (100).");
+        }
+
         try {
             return evaluate(expression);
         } catch (Exception e) {
@@ -31,7 +42,7 @@ public class CalculatorModel {
                     throw new RuntimeException("Неожиданный символ: " + (char) ch);
                 return x;
             }
-            
+
             double parseExpression() {
                 double x = parseTerm();
                 while (true) {
