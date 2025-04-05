@@ -56,9 +56,15 @@ public class CalculatorModel {
                 double x = parsePower();
                 while (true) {
                     if (eat('*')) x *= parsePower();
-                    else if (eat('/')) x /= parsePower();
+                    else if (eat('/')) {
+                        if (ch == '/') {
+                            nextChar();
+                            x = Math.floor(x / parsePower());
+                        } else {
+                            x /= parsePower();
+                        }
+                    }
                     else if (eat('%')) x %= parsePower();
-                    else if (eat('/') && eat('/')) x = Math.floor(x / parsePower());
                     else return x;
                 }
             }
